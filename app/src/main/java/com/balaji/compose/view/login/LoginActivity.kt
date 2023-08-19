@@ -1,4 +1,4 @@
-package com.balaji.compose.view.main
+package com.balaji.compose.view.login
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,10 +8,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.balaji.compose.ui.theme.ComposeTheme
-import com.balaji.compose.view.main.ui.MainScreen
+import com.balaji.compose.view.login.ui.LoginScreen
 
-class MainActivity : ComponentActivity() {
-
+class LoginActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -21,9 +20,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainScreen("Android")
+                    LoginScreen("Android")
                 }
             }
         }
     }
 }
+

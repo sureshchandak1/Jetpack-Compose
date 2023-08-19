@@ -12,17 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Compose"
         tools:targetApi="31">
+
         <activity
-            android:name=".view.main.MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Compose">
+            android:name=".view.splash.SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".view.login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.main.MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

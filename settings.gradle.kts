@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Compose"
 include(":app")
+include(":sharedcode")
