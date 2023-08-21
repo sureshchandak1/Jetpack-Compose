@@ -8,9 +8,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.balaji.compose.AppNavigator
 import com.balaji.compose.ui.theme.ComposeTheme
 import com.balaji.compose.view.splash.ui.SplashScreen
@@ -26,7 +24,7 @@ class SplashActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    SplashScreen(this)
+                    SplashScreen()
                 }
             }
         }
@@ -35,14 +33,6 @@ class SplashActivity : ComponentActivity() {
             AppNavigator.navigateToLoginActivity(this)
             finish()
         }, 1000)
-    }
-
-    @Preview(showBackground = true)
-    @Composable
-    fun SplashScreenPreview() {
-        ComposeTheme {
-            SplashScreen(this)
-        }
     }
 
 }
