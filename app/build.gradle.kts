@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace = "com.balaji.compose"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.balaji.compose"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -21,14 +21,50 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("debug") {
+            applicationIdSuffix = ".debug"
             isMinifyEnabled = false
+            isShrinkResources = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        getByName("release") {
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
     }
+
+    flavorDimensions += "version"
+    productFlavors {
+        create("Dev") {
+            dimension = "version"
+            applicationIdSuffix = ".dev"
+
+            buildConfigField("Boolean", "IS_PROD", "false")
+            buildConfigField("String", "BASE_URL", "\"API_URL\"")
+        }
+        create("Staging") {
+            dimension = "version"
+            applicationIdSuffix = ".staging"
+
+            buildConfigField("Boolean", "IS_PROD", "false")
+            buildConfigField("String", "BASE_URL", "\"API_URL\"")
+        }
+        create("Production") {
+            dimension = "version"
+            applicationIdSuffix = ".production"
+
+            buildConfigField("Boolean", "IS_PROD", "true")
+            buildConfigField("String", "BASE_URL", "\"API_URL\"")
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -39,6 +75,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"

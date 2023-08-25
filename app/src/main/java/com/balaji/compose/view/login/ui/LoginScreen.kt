@@ -12,16 +12,17 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.balaji.compose.R
 import com.balaji.compose.ui.theme.ComposeTheme
+import com.balaji.compose.ui.theme.dimens
 import com.balaji.compose.view.login.LoginRepository
 import com.balaji.compose.view.login.LoginViewModel
 import com.balaji.compose.view.login.LoginViewModelFactory
@@ -29,7 +30,8 @@ import com.balaji.compose.view.login.LoginViewModelFactory
 @Composable
 fun LoginScreen() {
 
-    val repository = LoginRepository()
+    val context = LocalContext.current
+    val repository = LoginRepository(context)
     val factory = LoginViewModelFactory(repository)
     val vm: LoginViewModel = viewModel(factory = factory)
 
@@ -37,12 +39,9 @@ fun LoginScreen() {
 
         val (title, loginET, passwordET, loginButton) = createRefs()
 
-        val emailId = remember { mutableStateOf("") }
-        val password = remember { mutableStateOf("") }
-
         Text(text = "Login",
             modifier = Modifier
-                .padding(top = 60.dp)
+                .padding(top = MaterialTheme.dimens.dp60)
                 .constrainAs(title) {
                     top.linkTo(parent.top)
                     start.linkTo(parent.start)
@@ -50,12 +49,16 @@ fun LoginScreen() {
                 })
 
         OutlinedTextField(
-            label = { Text(text = "Email ID") },
+            label = { Text(text = stringResource(R.string.email_id)) },
             value = repository.emailId,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 16.dp, end = 16.dp, top = 40.dp)
+                .padding(
+                    start = MaterialTheme.dimens.dp16,
+                    end = MaterialTheme.dimens.dp16,
+                    top = MaterialTheme.dimens.dp40
+                )
                 .constrainAs(loginET) {
                     top.linkTo(title.bottom)
                     start.linkTo(parent.start)
@@ -73,19 +76,23 @@ fun LoginScreen() {
             },
             trailingIcon = {
                 if (repository.isEmailIdError)
-                    Icon(Icons.Filled.Close,"error", tint = MaterialTheme.colorScheme.error)
+                    Icon(Icons.Filled.Close, "error", tint = MaterialTheme.colorScheme.error)
             },
             onValueChange = { repository.updateEmailId(it) }
         )
 
         OutlinedTextField(
-            label = { Text(text = "Password") },
+            label = { Text(text = stringResource(R.string.password)) },
             value = repository.password,
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 16.dp, end = 16.dp, top = 24.dp)
+                .padding(
+                    start = MaterialTheme.dimens.dp16,
+                    end = MaterialTheme.dimens.dp16,
+                    top = MaterialTheme.dimens.dp24
+                )
                 .constrainAs(passwordET) {
                     top.linkTo(loginET.bottom)
                     start.linkTo(parent.start)
@@ -103,7 +110,7 @@ fun LoginScreen() {
             },
             trailingIcon = {
                 if (repository.isPasswordError)
-                    Icon(Icons.Filled.Close,"error", tint = MaterialTheme.colorScheme.error)
+                    Icon(Icons.Filled.Close, "error", tint = MaterialTheme.colorScheme.error)
             },
             onValueChange = {
                 repository.updatePassword(it)
@@ -114,13 +121,17 @@ fun LoginScreen() {
             onClick = repository.loginClick,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 16.dp, end = 16.dp, top = 24.dp)
+                .padding(
+                    start = MaterialTheme.dimens.dp16,
+                    end = MaterialTheme.dimens.dp16,
+                    top = MaterialTheme.dimens.dp24
+                )
                 .constrainAs(loginButton) {
                     top.linkTo(passwordET.bottom)
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
                 }) {
-            Text(text = "Login")
+            Text(text = stringResource(R.string.login))
         }
     }
 }

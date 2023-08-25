@@ -1,11 +1,12 @@
 package com.balaji.compose.view.login
 
+import android.content.Context
 import android.text.TextUtils
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 
-class LoginRepository {
+class LoginRepository(private val mContext: Context) {
 
     var emailId by mutableStateOf("")
         private set
