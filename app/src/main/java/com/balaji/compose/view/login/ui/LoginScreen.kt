@@ -4,8 +4,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Button
-import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,11 +20,19 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.balaji.compose.ui.theme.ComposeTheme
+import com.balaji.compose.view.login.LoginRepository
+import com.balaji.compose.view.login.LoginViewModel
+import com.balaji.compose.view.login.LoginViewModelFactory
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen() {
+
+    val repository = LoginRepository()
+    val factory = LoginViewModelFactory(repository)
+    val vm: LoginViewModel = viewModel(factory = factory)
+
     ConstraintLayout(modifier = Modifier.fillMaxSize()) {
 
         val (title, loginET, passwordET, loginButton) = createRefs()
@@ -40,7 +51,7 @@ fun LoginScreen() {
 
         OutlinedTextField(
             label = { Text(text = "Email ID") },
-            value = emailId.value,
+            value = repository.emailId,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             modifier = Modifier
                 .fillMaxWidth()
@@ -50,12 +61,26 @@ fun LoginScreen() {
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
                 },
-            onValueChange = { emailId.value = it }
+            isError = repository.isEmailIdError,
+            supportingText = {
+                if (repository.isEmailIdError) {
+                    Text(
+                        modifier = Modifier.fillMaxWidth(),
+                        text = repository.emailError,
+                        color = MaterialTheme.colorScheme.error
+                    )
+                }
+            },
+            trailingIcon = {
+                if (repository.isEmailIdError)
+                    Icon(Icons.Filled.Close,"error", tint = MaterialTheme.colorScheme.error)
+            },
+            onValueChange = { repository.updateEmailId(it) }
         )
 
         OutlinedTextField(
             label = { Text(text = "Password") },
-            value = password.value,
+            value = repository.password,
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             modifier = Modifier
@@ -66,11 +91,27 @@ fun LoginScreen() {
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
                 },
-            onValueChange = { password.value = it }
+            isError = repository.isPasswordError,
+            supportingText = {
+                if (repository.isPasswordError) {
+                    Text(
+                        modifier = Modifier.fillMaxWidth(),
+                        text = repository.passwordError,
+                        color = MaterialTheme.colorScheme.error
+                    )
+                }
+            },
+            trailingIcon = {
+                if (repository.isPasswordError)
+                    Icon(Icons.Filled.Close,"error", tint = MaterialTheme.colorScheme.error)
+            },
+            onValueChange = {
+                repository.updatePassword(it)
+            }
         )
 
         Button(
-            onClick = { },
+            onClick = repository.loginClick,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 16.dp, end = 16.dp, top = 24.dp)
