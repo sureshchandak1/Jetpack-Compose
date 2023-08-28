@@ -34,6 +34,7 @@ data class Dimens(
     val dp24: Dp = 24.dp,
     val dp40: Dp = 40.dp,
     val dp60: Dp = 60.dp,
+    val dp120: Dp = 120.dp,
 
     val sp8: TextUnit = 8.sp,
     val sp10: TextUnit = 10.sp,

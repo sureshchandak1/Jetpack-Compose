@@ -1,11 +1,12 @@
 package com.balaji.compose.view.login.ui
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -14,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -22,7 +24,9 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.balaji.compose.R
 import com.balaji.compose.ui.theme.ComposeTheme
+import com.balaji.compose.ui.theme.FontRetention
 import com.balaji.compose.ui.theme.dimens
+import com.balaji.compose.ui.theme.fontQuicksand
 import com.balaji.compose.view.login.LoginRepository
 import com.balaji.compose.view.login.LoginViewModel
 import com.balaji.compose.view.login.LoginViewModelFactory
@@ -37,16 +41,34 @@ fun LoginScreen() {
 
     ConstraintLayout(modifier = Modifier.fillMaxSize()) {
 
-        val (title, loginET, passwordET, loginButton) = createRefs()
+        val (logo, title, loginET, passwordET, loginButton) = createRefs()
 
-        Text(text = "Login",
+        Image(painter = painterResource(id = R.drawable.logo),
+            contentDescription = "Compose",
             modifier = Modifier
-                .padding(top = MaterialTheme.dimens.dp60)
-                .constrainAs(title) {
+                .padding(top = MaterialTheme.dimens.dp40)
+                .width(MaterialTheme.dimens.dp120)
+                .height(MaterialTheme.dimens.dp120)
+                .constrainAs(logo) {
                     top.linkTo(parent.top)
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
-                })
+                }
+        )
+
+        Text(
+            text = "Login",
+            modifier = Modifier
+                .padding(top = MaterialTheme.dimens.dp16)
+                .constrainAs(title) {
+                    top.linkTo(logo.bottom)
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
+                },
+            color = MaterialTheme.colorScheme.onBackground,
+            fontSize = MaterialTheme.dimens.sp24,
+            fontFamily = fontQuicksand(FontRetention.QUICKSAND_BOLD)
+        )
 
         OutlinedTextField(
             label = { Text(text = stringResource(R.string.email_id)) },
@@ -76,7 +98,11 @@ fun LoginScreen() {
             },
             trailingIcon = {
                 if (repository.isEmailIdError)
-                    Icon(Icons.Filled.Close, "error", tint = MaterialTheme.colorScheme.error)
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_error),
+                        "Error",
+                        tint = MaterialTheme.colorScheme.error
+                    )
             },
             onValueChange = { repository.updateEmailId(it) }
         )
@@ -110,7 +136,11 @@ fun LoginScreen() {
             },
             trailingIcon = {
                 if (repository.isPasswordError)
-                    Icon(Icons.Filled.Close, "error", tint = MaterialTheme.colorScheme.error)
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_error),
+                        "Error",
+                        tint = MaterialTheme.colorScheme.error
+                    )
             },
             onValueChange = {
                 repository.updatePassword(it)

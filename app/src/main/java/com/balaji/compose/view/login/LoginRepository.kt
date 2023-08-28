@@ -5,6 +5,7 @@ import android.text.TextUtils
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import com.balaji.compose.AppNavigator
 
 class LoginRepository(private val mContext: Context) {
 
@@ -30,7 +31,7 @@ class LoginRepository(private val mContext: Context) {
 
     val loginClick: () -> Unit = {
         if (validation()) {
-
+            AppNavigator.navigateToMainActivity(mContext, true)
         }
     }
 
