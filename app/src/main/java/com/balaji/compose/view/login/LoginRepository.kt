@@ -30,9 +30,9 @@ class LoginRepository(private val mContext: Context) {
     }
 
     val loginClick: () -> Unit = {
-        if (validation()) {
+        //if (validation()) {
             AppNavigator.navigateToMainActivity(mContext, true)
-        }
+        //}
     }
 
     private fun validation() : Boolean {
