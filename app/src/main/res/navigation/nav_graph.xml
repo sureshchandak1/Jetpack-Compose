@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.material.androidpro.dashboard.DashboardFragment"
+        android:label="Material Design"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboardFragment_to_materialDesignFragment"
+            app:destination="@id/materialDesignFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:popUpTo="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_petListFragment"
+            app:destination="@id/petListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/materialDesignFragment"
+        android:name="com.material.androidpro.material.MaterialDesignFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_material_design">
+        <action
+            android:id="@+id/action_materialDesignFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:exitAnim="@android:anim/fade_out" />
+        <argument
+            android:name="materialType"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+        <argument
+            android:name="shortDes"
+            android:defaultValue=" "
+            app:argType="string" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_buttonDemoFragment"
+            app:destination="@id/buttonDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_buttonToggleFragment"
+            app:destination="@id/buttonToggleFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_buttonThemingFragment"
+            app:destination="@id/buttonThemingFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_bottomAppBarDemoFragment"
+            app:destination="@id/bottomAppBarDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_bottomAppBarNavigationFragment"
+            app:destination="@id/bottomAppBarNavigationFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_bottomSheetDemoFragment"
+            app:destination="@id/bottomSheetDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_bottomSheetModalFragment"
+            app:destination="@id/bottomSheetModalFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_bottomSheetPersistentFragment"
+            app:destination="@id/bottomSheetPersistentFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_bottomSheetFullScreenFragment"
+            app:destination="@id/bottomSheetFullScreenFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_buttonComposeDemoFragment"
+            app:destination="@id/buttonComposeDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_buttonComposeLoginFragment"
+            app:destination="@id/buttonComposeLoginFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_cardDemoFragment"
+            app:destination="@id/cardDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_cardComposeDemoFragment"
+            app:destination="@id/cardComposeDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_cardInLazyColumnFragment"
+            app:destination="@id/cardInLazyColumnFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_cardExpandableFragment"
+            app:destination="@id/cardExpandableFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_mySootheUiFragment"
+            app:destination="@id/mySootheUiFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_checkboxDemoFragment"
+            app:destination="@id/checkboxDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_checkboxComposeDemoFragment"
+            app:destination="@id/checkboxComposeDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_chipsDemoFragment"
+            app:destination="@id/chipsDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_chipsComposeDemoFragment"
+            app:destination="@id/chipsComposeDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_alertDialogFragment"
+            app:destination="@id/alertDialogFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_simpleDialogFragment"
+            app:destination="@id/simpleDialogFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_confirmationDialogFragment"
+            app:destination="@id/confirmationDialogFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_alertDialogComposeDemoFragment"
+            app:destination="@id/alertDialogComposeDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_menusDemoFragment"
+            app:destination="@id/menusDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_menusComposeDemoFragment"
+            app:destination="@id/menusComposeDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_bottomNavDemoFragment"
+            app:destination="@id/bottomNavDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_bottomNavComposeDemoFragment"
+            app:destination="@id/bottomNavComposeDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_progressDemoFragment"
+            app:destination="@id/progressDemoFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_progressComposeDemoFragment"
+            app:destination="@id/progressComposeDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_sliderDemoFragment"
+            app:destination="@id/sliderDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_sliderComposeDemoFragment"
+            app:destination="@id/sliderComposeDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_switchDemoFragment"
+            app:destination="@id/switchDemoFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_cardPagingFragment"
+            app:destination="@id/cardPagingFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_switchComposeDemoFragment"
+            app:destination="@id/switchComposeDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_tabsDemoFragment"
+            app:destination="@id/tabsDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_tabsComposeDemoFragment"
+            app:destination="@id/tabsComposeDemoFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_toolbarRegularFragment"
+            app:destination="@id/toolbarRegularFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_toolbarCenterFragment"
+            app:destination="@id/toolbarCenterFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_collapsingToolbarMediumFragment"
+            app:destination="@id/collapsingToolbarMediumFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_collapsingToolbarLargeFragment"
+            app:destination="@id/collapsingToolbarLargeFragment"
+            app:enterAnim="@android:anim/fade_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/buttonDemoFragment"
+        android:name="com.material.androidpro.material.buttons.demo.ButtonDemoFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_button_demo">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/buttonToggleFragment"
+        android:name="com.material.androidpro.material.buttons.toggle.ButtonToggleFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_button_toggle">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/buttonThemingFragment"
+        android:name="com.material.androidpro.material.buttons.theming.ButtonThemingFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_button_theming">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottomAppBarDemoFragment"
+        android:name="com.material.androidpro.material.bottomappbar.demo.BottomAppBarDemoFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_bottom_app_bar_demo">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottomAppBarNavigationFragment"
+        android:name="com.material.androidpro.material.bottomappbar.navigationbar.BottomAppBarNavigationFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_bottom_app_bar_navigation">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottomSheetDemoFragment"
+        android:name="com.material.androidpro.material.bottomsheet.demo.BottomSheetDemoFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_bottom_sheet_demo">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottomSheetModalFragment"
+        android:name="com.material.androidpro.material.bottomsheet.modal.BottomSheetModalFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_bottom_sheet_modal">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottomSheetPersistentFragment"
+        android:name="com.material.androidpro.material.bottomsheet.persistent.BottomSheetPersistentFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_bottom_sheet_persistent">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottomSheetFullScreenFragment"
+        android:name="com.material.androidpro.material.bottomsheet.fullscreen.BottomSheetFullScreenFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_bottom_sheet_full_screen">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/buttonComposeDemoFragment"
+        android:name="com.material.androidpro.material.buttons.compose.demo.ButtonComposeDemoFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/buttonComposeLoginFragment"
+        android:name="com.material.androidpro.material.buttons.compose.login.ButtonComposeLoginFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardDemoFragment"
+        android:name="com.material.androidpro.material.cards.demo.CardDemoFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_card_demo">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardComposeDemoFragment"
+        android:name="com.material.androidpro.material.cards.compose.demo.CardComposeDemoFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardInLazyColumnFragment"
+        android:name="com.material.androidpro.material.cards.compose.inlazycolumn.CardInLazyColumnFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardExpandableFragment"
+        android:name="com.material.androidpro.material.cards.compose.expandable.CardExpandableFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mySootheUiFragment"
+        android:name="com.material.androidpro.material.cards.compose.ui.mysoothe.MySootheUiFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkboxDemoFragment"
+        android:name="com.material.androidpro.material.checkboxes.demo.CheckboxDemoFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_checkbox_demo">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkboxComposeDemoFragment"
+        android:name="com.material.androidpro.material.checkboxes.compose.demo.CheckboxComposeDemoFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/chipsDemoFragment"
+        android:name="com.material.androidpro.material.chips.demo.ChipsDemoFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_chips_demo">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/chipsComposeDemoFragment"
+        android:name="com.material.androidpro.material.chips.compose.demo.ChipsComposeDemoFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/alertDialogFragment"
+        android:name="com.material.androidpro.material.dialogs.alert.AlertDialogFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_alert_dialog">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/simpleDialogFragment"
+        android:name="com.material.androidpro.material.dialogs.simple.SimpleDialogFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_simple_dialog">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationDialogFragment"
+        android:name="com.material.androidpro.material.dialogs.confirmation.ConfirmationDialogFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_confirmation_dialog">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/alertDialogComposeDemoFragment"
+        android:name="com.material.androidpro.material.dialogs.compose.demo.AlertDialogComposeDemoFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/menusDemoFragment"
+        android:name="com.material.androidpro.material.menus.demo.MenusDemoFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_menus_demo">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/menusComposeDemoFragment"
+        android:name="com.material.androidpro.material.menus.compose.demo.MenusComposeDemoFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottomNavDemoFragment"
+        android:name="com.material.androidpro.material.bottomnav.demo.BottomNavDemoFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_bottom_nav_demo">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottomNavComposeDemoFragment"
+        android:name="com.material.androidpro.material.bottomnav.compose.demo.BottomNavComposeDemoFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/progressDemoFragment"
+        android:name="com.material.androidpro.material.progress.demo.ProgressDemoFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_progress_demo">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/progressComposeDemoFragment"
+        android:name="com.material.androidpro.material.progress.compose.demo.ProgressComposeDemoFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/sliderDemoFragment"
+        android:name="com.material.androidpro.material.slider.demo.SliderDemoFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_slider_demo">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/sliderComposeDemoFragment"
+        android:name="com.material.androidpro.material.slider.compose.demo.SliderComposeDemoFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/switchDemoFragment"
+        android:name="com.material.androidpro.material.switchs.demo.SwitchDemoFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_switch_demo">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardPagingFragment"
+        android:name="com.material.androidpro.material.cards.paging.CardPagingFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_card_paging">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/switchComposeDemoFragment"
+        android:name="com.material.androidpro.material.switchs.compose.demo.SwitchComposeDemoFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/tabsDemoFragment"
+        android:name="com.material.androidpro.material.tabs.demo.TabsDemoFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_tabs_demo">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/tabsComposeDemoFragment"
+        android:name="com.material.androidpro.material.tabs.compose.demo.TabsComposeDemoFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/toolbarRegularFragment"
+        android:name="com.material.androidpro.material.toolbar.regular.ToolbarRegularFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_toolbar_regular">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/toolbarCenterFragment"
+        android:name="com.material.androidpro.material.toolbar.center.ToolbarCenterFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_toolbar_center">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/collapsingToolbarMediumFragment"
+        android:name="com.material.androidpro.material.toolbar.collapsing.medium.CollapsingToolbarMediumFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_collapsing_toolbar_medium">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/collapsingToolbarLargeFragment"
+        android:name="com.material.androidpro.material.toolbar.collapsing.large.CollapsingToolbarLargeFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_collapsing_toolbar_large">
+        <argument
+            android:name="title"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/petListFragment"
+        android:name="com.material.androidpro.compose.ui.petlist.PetListFragment"
+        android:label="Pet List">
+        <argument
+            android:name="title"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+</navigation>

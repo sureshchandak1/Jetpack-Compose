@@ -1,0 +1,131 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'androidx.navigation.safeargs'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    namespace 'com.material.androidpro'
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "com.material.androidpro"
+        minSdkVersion 24
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        def localProperties = new Properties()
+        localProperties.load(new FileInputStream(rootProject.file("key.properties")))
+
+        manifestPlaceholders = [MAPS_API_KEY: localProperties.getProperty("MAPS_API_KEY")]
+
+        buildConfigField("String", "B_KEY", localProperties.getProperty("B_KEY"))
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true   // Obfuscate and minify codes
+            shrinkResources true // Remove unused resources
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions 'tier'
+
+    productFlavors {
+        Production {
+            applicationId 'com.material.androidpro'
+
+            buildConfigField 'boolean', 'IS_PROD', 'true'
+            buildConfigField 'int', 'FROM', '0'
+
+            dimension 'tier'
+        }
+        UAT {
+            applicationId 'com.material.androidpro'
+
+            buildConfigField 'boolean', 'IS_PROD', 'false'
+            buildConfigField 'int', 'FROM', '1'
+
+            dimension 'tier'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        //noinspection DataBindingWithoutKapt
+        dataBinding true
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.4"
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    implementation "androidx.compose.ui:ui:1.4.0"
+    implementation "androidx.compose.material:material:1.4.0"
+    implementation "androidx.compose.ui:ui-tooling-preview:1.4.0"
+    implementation 'androidx.activity:activity-compose:1.7.0'
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:1.4.0"
+    debugImplementation "androidx.compose.ui:ui-tooling:1.4.0"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:1.4.0"
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+    implementation "androidx.navigation:navigation-compose:2.5.3"
+
+    implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
+    implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
+
+    implementation "com.google.dagger:hilt-android:2.42"
+    kapt "com.google.dagger:hilt-compiler:2.42"
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+    implementation "androidx.paging:paging-runtime-ktx:3.1.1"
+
+    implementation project(path: ':sharedcode')
+
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

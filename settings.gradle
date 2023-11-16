@@ -1,0 +1,3 @@
+rootProject.name = "androidpro"
+include ':app'
+include ':sharedcode'

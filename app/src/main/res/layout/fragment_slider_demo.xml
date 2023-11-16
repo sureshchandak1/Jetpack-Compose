@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_16sdp"
+            android:orientation="vertical">
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:valueFrom="0.0"
+                android:valueTo="100.0" />
+
+            <com.google.android.material.slider.Slider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:stepSize="10.0"
+                android:valueFrom="0.0"
+                android:valueTo="100.0" />
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/rangeSlider1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:valueFrom="0.0"
+                android:valueTo="100.0"
+                app:values="@array/initial_slider_values1" />
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/rangeSlider2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:stepSize="2.5"
+                android:valueFrom="0.0"
+                android:valueTo="100.0"
+                app:values="@array/initial_slider_values2" />
+
+            <com.google.android.material.slider.Slider
+                style="@style/MySlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:stepSize="5.0"
+                android:valueFrom="0.0"
+                android:valueTo="100.0"
+                app:thumbColor="@color/secondaryContainer"
+                app:thumbStrokeColor="@color/secondary"
+                app:thumbStrokeWidth="@dimen/dp_2"
+                app:tickColorActive="@color/secondaryContainer"
+                app:tickColorInactive="@color/secondary"
+                app:tickVisible="true"
+                app:trackColorActive="@color/secondary"
+                app:trackColorInactive="@color/secondaryContainer" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+</layout>

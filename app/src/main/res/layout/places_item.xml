@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.material.androidpro.common.places.PlacesItemViewModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="?attr/materialCardViewElevatedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_8"
+        android:onClick="@{vm::itemClick}"
+        app:cardBackgroundColor="@color/onPrimary"
+        app:cardCornerRadius="@dimen/dp_4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_16">
+
+            <ImageView
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_240"
+                android:scaleType="centerCrop"
+                app:setImageDrawable='@{vm.mImage}' />
+
+            <com.material.sharedcode.widgets.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:text="@{vm.mPlaces}"
+                android:textColor="@color/onBackground"
+                android:textSize="@dimen/sp_16"
+                app:text_font="Quicksand_Medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_6"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:text="@{vm.mCity}"
+                android:textColor="@color/grey_500"
+                android:textSize="@dimen/sp_14" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

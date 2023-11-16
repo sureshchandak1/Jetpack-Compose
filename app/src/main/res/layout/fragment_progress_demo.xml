@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/linearProgressIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:indeterminate="true"
+            app:indeterminateAnimationType="disjoint"
+            app:indicatorColor="@color/primary"
+            app:indicatorDirectionLinear="startToEnd" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/circularProgressIndicator"
+            style="@style/Widget.MaterialComponents.CircularProgressIndicator.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:indeterminate="true"
+            app:indicatorColor="@color/primary"
+            app:showAnimationBehavior="none"
+            app:trackColor="@color/primaryContainer"
+            app:trackCornerRadius="@dimen/dp_4" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/circularProgressIndicator1"
+            style="@style/Widget.MaterialComponents.CircularProgressIndicator.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:indeterminate="true"
+            app:indicatorColor="@color/primary"
+            app:indicatorDirectionCircular="clockwise"
+            app:showAnimationBehavior="none"
+            app:trackCornerRadius="@dimen/dp_2"
+            app:trackThickness="@dimen/dp_20" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchDe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16sdp"
+            android:text="Determinate Mode" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16sdp"
+            android:hint="Progress (1 to 100)"
+            app:helperText="Enter an integer value from 0 to 100 to change progress in determinate mode.">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/progressValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/progressButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:text="Progress"
+            app:cornerRadius="@dimen/dp_6" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16sdp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/show"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_weight="1"
+                android:text="Show"
+                app:cornerRadius="@dimen/dp_6"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="@dimen/dp_1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hide"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_weight="1"
+                android:text="Hide"
+                android:textColor="@color/secondary"
+                app:cornerRadius="@dimen/dp_6"
+                app:strokeColor="@color/secondary"
+                app:strokeWidth="@dimen/dp_1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

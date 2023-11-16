@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.App.Button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="Button"
+                app:cornerRadius="@dimen/dp_4" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.App.Button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="Button"
+                app:cornerRadius="@dimen/dp_4" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.App.Button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="Button"
+                app:cornerRadius="@dimen/dp_4" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.App.Button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="Button"
+                app:cornerRadius="@dimen/dp_4" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleButton1"
+                style="?attr/materialButtonToggleGroupStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button 1"
+                    app:cornerRadius="@dimen/dp_4" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button 2"
+                    app:cornerRadius="@dimen/dp_4" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button 3"
+                    app:cornerRadius="@dimen/dp_4" />
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button5"
+                    app:cornerRadius="@dimen/dp_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button 1" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button5"
+                    app:cornerRadius="@dimen/dp_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button 2" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button5"
+                    app:cornerRadius="@dimen/dp_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button 3" />
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleButton3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button6"
+                    app:cornerRadius="@dimen/dp_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_arrow_left" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button6"
+                    app:cornerRadius="@dimen/dp_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_add" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button6"
+                    app:cornerRadius="@dimen/dp_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_menu_nav" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button6"
+                    app:cornerRadius="@dimen/dp_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_touch_app" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button6"
+                    app:cornerRadius="@dimen/dp_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_arrow_right" />
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button7"
+                    app:cornerRadius="@dimen/dp_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_arrow_left" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button7"
+                    app:cornerRadius="@dimen/dp_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_add" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button7"
+                    app:cornerRadius="@dimen/dp_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_menu_nav" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button7"
+                    app:cornerRadius="@dimen/dp_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_touch_app" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.App.Button7"
+                    app:cornerRadius="@dimen/dp_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_arrow_right" />
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

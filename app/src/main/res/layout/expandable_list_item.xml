@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.material.androidpro.dashboard.home.ExpandableChildItemViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dp_16"
+        android:paddingTop="@dimen/dp_12"
+        android:paddingEnd="@dimen/dp_16"
+        android:paddingBottom="@dimen/dp_12">
+
+        <com.material.sharedcode.widgets.CustomTextView
+            android:id="@+id/expandedListItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_40"
+            android:text="@{vm.mChild}"
+            android:textColor="@color/onBackground"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text_font="Quicksand_Medium" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
