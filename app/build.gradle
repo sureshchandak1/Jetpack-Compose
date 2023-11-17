@@ -11,11 +11,11 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "com.material.androidpro"
+        applicationId "com.balaji.androidpro"
         minSdkVersion 24
         targetSdkVersion 33
-        versionCode 2
-        versionName "1.0.2"
+        versionCode 3
+        versionName "1.0.3"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -45,7 +45,7 @@ android {
 
     productFlavors {
         Production {
-            applicationId 'com.material.androidpro'
+            applicationId 'com.balaji.androidpro'
 
             buildConfigField 'boolean', 'IS_PROD', 'true'
             buildConfigField 'int', 'FROM', '0'
@@ -53,7 +53,7 @@ android {
             dimension 'tier'
         }
         UAT {
-            applicationId 'com.material.androidpro'
+            applicationId 'com.balaji.androidpro'
 
             buildConfigField 'boolean', 'IS_PROD', 'false'
             buildConfigField 'int', 'FROM', '1'
