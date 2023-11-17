@@ -6,6 +6,7 @@ import com.material.androidpro.MaterialRetention;
 import com.material.androidpro.R;
 import com.material.androidpro.adapters.ViewModel;
 import com.material.androidpro.common.EmptyItemViewModel;
+import com.material.androidpro.common.GithubItemViewModel;
 import com.material.androidpro.common.HeadingItemViewModel;
 import com.material.androidpro.compose.ui.ComposeUIRetention;
 
@@ -129,6 +130,11 @@ public final class DashboardData {
         model.setShortDes("");
         model.setComposeUIType(ComposeUIRetention.PET_LIST);
         list.add(new ComposeUIItemViewModel(activity, model));
+
+        list.add(new HeadingItemViewModel("GitHub"));
+
+        list.add(new GithubItemViewModel("Jetpack-Compose", "https://github.com/suresh000/Jetpack-Compose"));
+        list.add(new GithubItemViewModel("Android-MVVM", "https://github.com/suresh000/Android-MVVM"));
 
         list.add(new EmptyItemViewModel());
 

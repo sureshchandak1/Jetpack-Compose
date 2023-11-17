@@ -4,6 +4,7 @@ import com.material.androidpro.R
 import com.material.androidpro.adapters.DataBindingRecyclerViewAdapter
 import com.material.androidpro.adapters.ViewModel
 import com.material.androidpro.common.EmptyItemViewModel
+import com.material.androidpro.common.GithubItemViewModel
 import com.material.androidpro.common.HeadingItemViewModel
 
 class DashboardAdapter internal constructor(viewModels: MutableList<ViewModel>) :
@@ -16,6 +17,7 @@ class DashboardAdapter internal constructor(viewModels: MutableList<ViewModel>) 
         mViewModelMap[DashboardItemViewModel::class.java] = R.layout.dashboard_item
         mViewModelMap[ComposeUIItemViewModel::class.java] = R.layout.compose_ui_item
         mViewModelMap[HeadingItemViewModel::class.java] = R.layout.heading_item
+        mViewModelMap[GithubItemViewModel::class.java] = R.layout.github_item
         mViewModelMap[EmptyItemViewModel::class.java] = R.layout.empty_item
     }
 
