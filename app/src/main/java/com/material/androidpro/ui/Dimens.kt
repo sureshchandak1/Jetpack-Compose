@@ -30,10 +30,14 @@ object Dimens {
     val dp_100: Dp = 100.dp
     val dp_120: Dp = 120.dp
     val dp_192: Dp = 192.dp
+    val dp_200: Dp = 200.dp
+    val dp_600: Dp = 600.dp
 
     val sp_14: TextUnit = 14.sp
     val sp_16: TextUnit = 16.sp
     val sp_18: TextUnit = 18.sp
+    val sp_22: TextUnit = 22.sp
     val sp_30: TextUnit = 30.sp
+    val sp_44: TextUnit = 44.sp
 
 }

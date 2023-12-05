@@ -26,6 +26,12 @@ class ComposeUIItemViewModel(private val mActivity: Activity, model: DashboardMo
                     val navController = Navigation.findNavController(view)
                     navController.navigate(action)
                 }
+                ComposeUIRetention.WATTER_BOTTLE -> {
+                    val action = DashboardFragmentDirections.actionDashboardFragmentToWatterBottleFragment()
+
+                    val navController = Navigation.findNavController(view)
+                    navController.navigate(action)
+                }
             }
         }
     }

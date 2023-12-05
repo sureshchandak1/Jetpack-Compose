@@ -131,8 +131,16 @@ public final class DashboardData {
         model.setComposeUIType(ComposeUIRetention.PET_LIST);
         list.add(new ComposeUIItemViewModel(activity, model));
 
+        model = new DashboardModel();
+        model.setImage(R.drawable.water_bottle);
+        model.setTitle("Water Bottle");
+        model.setShortDes("");
+        model.setComposeUIType(ComposeUIRetention.WATTER_BOTTLE);
+        list.add(new ComposeUIItemViewModel(activity, model));
+
         list.add(new HeadingItemViewModel("GitHub"));
 
+        list.add(new GithubItemViewModel("kotlin-master", "https://github.com/suresh000/kotlin-master"));
         list.add(new GithubItemViewModel("Jetpack-Compose", "https://github.com/suresh000/Jetpack-Compose"));
         list.add(new GithubItemViewModel("Android-MVVM", "https://github.com/suresh000/Android-MVVM"));
 
