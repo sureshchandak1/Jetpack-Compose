@@ -42,7 +42,7 @@ class SplashActivity : ComponentActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             AppNavigator.navigateToDashboardActivity(this)
-        }, 100)
+        }, 500)
     }
 }
 
