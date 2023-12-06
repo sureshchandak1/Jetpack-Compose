@@ -138,6 +138,13 @@ public final class DashboardData {
         model.setComposeUIType(ComposeUIRetention.WATTER_BOTTLE);
         list.add(new ComposeUIItemViewModel(activity, model));
 
+        model = new DashboardModel();
+        model.setImage(R.drawable.water_bottle);
+        model.setTitle("Compose with MVVM");
+        model.setShortDes("");
+        model.setComposeUIType(ComposeUIRetention.COMPOSE_MVVM);
+        list.add(new ComposeUIItemViewModel(activity, model));
+
         list.add(new HeadingItemViewModel("GitHub"));
 
         list.add(new GithubItemViewModel("kotlin-master", "https://github.com/suresh000/kotlin-master"));

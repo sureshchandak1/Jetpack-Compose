@@ -27,7 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.material.androidpro.R
 import com.material.androidpro.compose.ui.component.GenderTag
-import com.material.androidpro.model.Pet
+import com.material.androidpro.model.petlist.Pet
 import com.material.androidpro.ui.Dimens
 
 @Composable

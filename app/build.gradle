@@ -49,6 +49,8 @@ android {
 
             buildConfigField 'boolean', 'IS_PROD', 'true'
             buildConfigField 'int', 'FROM', '0'
+            buildConfigField 'String', 'DOMAIN', '""'
+            buildConfigField 'String', 'BASE_URL', '""'
 
             dimension 'tier'
         }
@@ -57,6 +59,8 @@ android {
 
             buildConfigField 'boolean', 'IS_PROD', 'false'
             buildConfigField 'int', 'FROM', '1'
+            buildConfigField 'String', 'DOMAIN', '""'
+            buildConfigField 'String', 'BASE_URL', '""'
 
             dimension 'tier'
         }
@@ -98,6 +102,8 @@ dependencies {
     implementation "androidx.compose.material:material:1.4.0"
     implementation "androidx.compose.ui:ui-tooling-preview:1.4.0"
     implementation 'androidx.activity:activity-compose:1.7.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2'
+    implementation 'androidx.compose.runtime:runtime-livedata:1.4.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:1.4.0"
     debugImplementation "androidx.compose.ui:ui-tooling:1.4.0"
     debugImplementation "androidx.compose.ui:ui-test-manifest:1.4.0"
@@ -125,6 +131,13 @@ dependencies {
 
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
+    implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

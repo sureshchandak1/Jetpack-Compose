@@ -1,4 +1,4 @@
-package com.material.androidpro.model
+package com.material.androidpro.model.petlist
 
 data class Pet(
     val id: Int,

@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_watterBottleFragment"
             app:destination="@id/watterBottleFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_composeMVVMFragment"
+            app:destination="@id/composeMVVMFragment" />
     </fragment>
     <fragment
         android:id="@+id/materialDesignFragment"
@@ -616,6 +619,15 @@
         android:id="@+id/watterBottleFragment"
         android:name="com.material.androidpro.compose.ui.watterBottle.WatterBottleFragment"
         android:label="Watter Bottle">
+        <argument
+            android:name="title"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/composeMVVMFragment"
+        android:name="com.material.androidpro.compose.ui.composeMVVM.ComposeMVVMFragment"
+        android:label="Compose MVVM">
         <argument
             android:name="title"
             android:defaultValue=""

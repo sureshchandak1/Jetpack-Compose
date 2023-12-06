@@ -19,17 +19,18 @@ class ComposeUIItemViewModel(private val mActivity: Activity, model: DashboardMo
     fun itemClick(view: View) {
         val model: DashboardModel? = mModel.get()
         if (model != null) {
+            val navController = Navigation.findNavController(view)
             when (model.composeUIType) {
                 ComposeUIRetention.PET_LIST -> {
                     val action = DashboardFragmentDirections.actionDashboardFragmentToPetListFragment()
-
-                    val navController = Navigation.findNavController(view)
                     navController.navigate(action)
                 }
                 ComposeUIRetention.WATTER_BOTTLE -> {
                     val action = DashboardFragmentDirections.actionDashboardFragmentToWatterBottleFragment()
-
-                    val navController = Navigation.findNavController(view)
+                    navController.navigate(action)
+                }
+                ComposeUIRetention.COMPOSE_MVVM -> {
+                    val action = DashboardFragmentDirections.actionDashboardFragmentToComposeMVVMFragment()
                     navController.navigate(action)
                 }
             }

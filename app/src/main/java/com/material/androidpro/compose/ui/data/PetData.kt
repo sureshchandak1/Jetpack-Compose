@@ -1,8 +1,8 @@
 package com.material.androidpro.compose.ui.data
 
 import com.material.androidpro.R
-import com.material.androidpro.model.Owner
-import com.material.androidpro.model.Pet
+import com.material.androidpro.model.petlist.Owner
+import com.material.androidpro.model.petlist.Pet
 
 object PetData {
     val owner = Owner("Sophia Evelyn", "Pet Lover", R.drawable.profile_1)
