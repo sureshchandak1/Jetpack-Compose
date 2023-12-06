@@ -10,11 +10,7 @@ import com.material.androidpro.compose.ui.ComposeUIRetention
 class ComposeUIItemViewModel(private val mActivity: Activity, model: DashboardModel) : ViewModel {
 
     @JvmField
-    val mModel = ObservableField<DashboardModel>()
-
-    init {
-        mModel.set(model)
-    }
+    val mModel = ObservableField(model)
 
     fun itemClick(view: View) {
         val model: DashboardModel? = mModel.get()
