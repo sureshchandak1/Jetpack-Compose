@@ -1,3 +1,4 @@
 rootProject.name = "androidpro"
 include ':app'
 include ':sharedcode'
+include ':composeui'

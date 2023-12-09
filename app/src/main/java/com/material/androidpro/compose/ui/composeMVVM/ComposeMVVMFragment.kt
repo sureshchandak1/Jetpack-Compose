@@ -23,7 +23,7 @@ class ComposeMVVMFragment : Fragment() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-
+                    ComposeMVVMScreen()
                 }
             }
         }

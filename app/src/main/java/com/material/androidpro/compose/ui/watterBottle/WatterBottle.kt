@@ -47,7 +47,7 @@ fun WatterBottle(
 
     Box(modifier = Modifier
         .width(Dimens.dp_200)
-        .height(Dimens.dp_600)) {
+        .height(Dimens.dp_500)) {
         Canvas(modifier = Modifier.fillMaxSize()) {
             val width = size.width
             val height = size.height
