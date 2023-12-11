@@ -32,6 +32,9 @@
         <activity
             android:name=".dashboard.DashboardActivity"
             android:exported="false" />
+        <activity
+            android:name=".compose.ui.navigation.ComposeNavigationActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

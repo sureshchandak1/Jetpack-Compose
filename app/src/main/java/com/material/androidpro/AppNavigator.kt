@@ -2,6 +2,7 @@ package com.material.androidpro
 
 import android.content.Context
 import android.content.Intent
+import com.material.androidpro.compose.ui.navigation.ComposeNavigationActivity
 import com.material.androidpro.dashboard.DashboardActivity
 import com.material.androidpro.splash.SplashActivity
 
@@ -22,6 +23,11 @@ class AppNavigator private constructor() {
         fun navigateToDashboardActivity(context: Context) {
             val intent = Intent(context, DashboardActivity::class.java)
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            context.startActivity(intent)
+        }
+
+        fun navigateToComposeNavigationActivity(context: Context) {
+            val intent = Intent(context, ComposeNavigationActivity::class.java)
             context.startActivity(intent)
         }
     }

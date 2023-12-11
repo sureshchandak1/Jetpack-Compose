@@ -4,6 +4,7 @@ import android.app.Activity
 import android.view.View
 import androidx.databinding.ObservableField
 import androidx.navigation.Navigation
+import com.material.androidpro.AppNavigator
 import com.material.androidpro.adapters.ViewModel
 import com.material.androidpro.compose.ui.ComposeUIRetention
 
@@ -28,6 +29,9 @@ class ComposeUIItemViewModel(private val mActivity: Activity, model: DashboardMo
                 ComposeUIRetention.COMPOSE_MVVM -> {
                     val action = DashboardFragmentDirections.actionDashboardFragmentToComposeMVVMFragment()
                     navController.navigate(action)
+                }
+                ComposeUIRetention.COMPOSE_NAVIGATION -> {
+                    AppNavigator.navigateToComposeNavigationActivity(mActivity)
                 }
             }
         }

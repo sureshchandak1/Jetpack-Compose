@@ -139,7 +139,7 @@ class DashboardData private constructor() {
             model.title = "Pet List"
             model.shortDes = ""
             model.composeUIType = ComposeUIRetention.PET_LIST
-            list.add(ComposeUIItemViewModel(activity!!, model))
+            list.add(ComposeUIItemViewModel(activity, model))
 
             model = DashboardModel()
             model.image = R.drawable.water_bottle
@@ -153,6 +153,13 @@ class DashboardData private constructor() {
             model.title = "Compose with MVVM"
             model.shortDes = ""
             model.composeUIType = ComposeUIRetention.COMPOSE_MVVM
+            list.add(ComposeUIItemViewModel(activity, model))
+
+            model = DashboardModel()
+            model.image = R.drawable.water_bottle
+            model.title = "Compose Navigation"
+            model.shortDes = ""
+            model.composeUIType = ComposeUIRetention.COMPOSE_NAVIGATION
             list.add(ComposeUIItemViewModel(activity, model))
 
             list.add(HeadingItemViewModel("GitHub"))
