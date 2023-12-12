@@ -35,6 +35,8 @@ object Dimens {
     val dp_500: Dp = 500.dp
     val dp_600: Dp = 600.dp
 
+    val sp_10: TextUnit = 10.sp
+    val sp_12: TextUnit = 12.sp
     val sp_14: TextUnit = 14.sp
     val sp_16: TextUnit = 16.sp
     val sp_18: TextUnit = 18.sp

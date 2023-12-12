@@ -74,6 +74,9 @@ class MaterialDesignList private constructor() {
             model = MaterialModel("with Navigation Bar", BottomAppBarRetention.NAVIGATION_BAR)
             viewModels.add(BottomAppBarItemViewModel(model))
 
+            model = MaterialModel("Compose Bottom Navigation", BottomAppBarRetention.COMPOSE_DEMO)
+            viewModels.add(BottomAppBarItemViewModel(model))
+
             return viewModels
         }
 

@@ -210,6 +210,9 @@
             android:id="@+id/action_materialDesignFragment_to_collapsingToolbarLargeFragment"
             app:destination="@id/collapsingToolbarLargeFragment"
             app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_bottomNavComposeDemoFragment2"
+            app:destination="@id/bottomNavComposeDemoFragment2" />
     </fragment>
     <fragment
         android:id="@+id/buttonDemoFragment"
@@ -628,6 +631,15 @@
         android:id="@+id/composeMVVMFragment"
         android:name="com.material.androidpro.compose.ui.composeMVVM.ComposeMVVMFragment"
         android:label="Compose MVVM">
+        <argument
+            android:name="title"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottomNavComposeDemoFragment2"
+        android:name="com.material.androidpro.material.bottomappbar.compose.demo.BottomNavComposeDemoFragment"
+        android:label="Compose Bottom Navigation">
         <argument
             android:name="title"
             android:defaultValue=""

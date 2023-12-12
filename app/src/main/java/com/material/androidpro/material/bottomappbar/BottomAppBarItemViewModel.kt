@@ -30,6 +30,11 @@ class BottomAppBarItemViewModel(model: MaterialModel) : ViewModel {
                     MaterialDesignFragmentDirections.actionMaterialDesignFragmentToBottomAppBarNavigationFragment()
                 action1.title = model.title
                 navController.navigate(action1)
+            } else if (model.from == BottomAppBarRetention.COMPOSE_DEMO) {
+                val action1 =
+                    MaterialDesignFragmentDirections.actionMaterialDesignFragmentToBottomNavComposeDemoFragment2()
+                action1.title = model.title
+                navController.navigate(action1)
             }
         }
     }
