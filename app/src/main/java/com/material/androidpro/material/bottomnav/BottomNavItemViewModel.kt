@@ -20,16 +20,25 @@ class BottomNavItemViewModel(model: MaterialModel) : ViewModel {
         val model = mModel.get()
         if (model != null) {
             val navController = findNavController(view!!)
-            if (model.from == BottomNavRetention.DEMO) {
-                val action1 =
-                    MaterialDesignFragmentDirections.actionMaterialDesignFragmentToBottomNavDemoFragment()
-                action1.title = model.title
-                navController.navigate(action1)
-            } else if (model.from == BottomNavRetention.COMPOSE_DEMO) {
-                val action1 =
-                    MaterialDesignFragmentDirections.actionMaterialDesignFragmentToBottomNavComposeDemoFragment()
-                action1.title = model.title
-                navController.navigate(action1)
+            when (model.from) {
+                BottomNavRetention.DEMO -> {
+                    val action =
+                        MaterialDesignFragmentDirections.actionMaterialDesignFragmentToBottomNavDemoFragment()
+                    action.title = model.title
+                    navController.navigate(action)
+                }
+                BottomNavRetention.COMPOSE_DEMO -> {
+                    val action =
+                        MaterialDesignFragmentDirections.actionMaterialDesignFragmentToBottomNavComposeDemoFragment()
+                    action.title = model.title
+                    navController.navigate(action)
+                }
+                BottomNavRetention.WITH_COMPOSE_NAVIGATION -> {
+                    val action =
+                        MaterialDesignFragmentDirections.actionMaterialDesignFragmentToBottomNavWithNavigationFragment()
+                    action.title = model.title
+                    navController.navigate(action)
+                }
             }
         }
     }

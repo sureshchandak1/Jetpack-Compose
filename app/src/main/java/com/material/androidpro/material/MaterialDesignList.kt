@@ -206,6 +206,9 @@ class MaterialDesignList private constructor() {
             model = MaterialModel("Compose Demo", BottomNavRetention.COMPOSE_DEMO)
             viewModels.add(BottomNavItemViewModel(model))
 
+            model = MaterialModel("with Compose Navigation", BottomNavRetention.WITH_COMPOSE_NAVIGATION)
+            viewModels.add(BottomNavItemViewModel(model))
+
             return viewModels
         }
 

@@ -213,6 +213,9 @@
         <action
             android:id="@+id/action_materialDesignFragment_to_bottomNavComposeDemoFragment2"
             app:destination="@id/bottomNavComposeDemoFragment2" />
+        <action
+            android:id="@+id/action_materialDesignFragment_to_bottomNavWithNavigationFragment"
+            app:destination="@id/bottomNavWithNavigationFragment" />
     </fragment>
     <fragment
         android:id="@+id/buttonDemoFragment"
@@ -640,6 +643,15 @@
         android:id="@+id/bottomNavComposeDemoFragment2"
         android:name="com.material.androidpro.material.bottomappbar.compose.demo.BottomNavComposeDemoFragment"
         android:label="Compose Bottom Navigation">
+        <argument
+            android:name="title"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottomNavWithNavigationFragment"
+        android:name="com.material.androidpro.material.bottomnav.compose.withNavigation.BottomNavWithNavigationFragment"
+        android:label="with Compose Navigation">
         <argument
             android:name="title"
             android:defaultValue=""
