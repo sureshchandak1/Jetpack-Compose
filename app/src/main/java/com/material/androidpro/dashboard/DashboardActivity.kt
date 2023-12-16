@@ -8,8 +8,9 @@ import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.material.androidpro.R
 import com.material.androidpro.base.BaseActivity
 import com.material.androidpro.databinding.ActivityDashboardBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class DashboardActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
