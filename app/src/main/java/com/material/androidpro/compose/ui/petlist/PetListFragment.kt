@@ -33,15 +33,16 @@ class PetListFragment : Fragment() {
 private fun ScreenUI() {
     Scaffold {
         LazyColumn {
-            items(PetData.petList) {
-                PetData.petList.forEach {
-                    PerItemCard(
-                        it,
-                        onItemClicked = { pet ->
+            items(
+                items = PetData.petList,
+                key = { it.uniqueId }
+            ) {
+                PerItemCard(
+                    it,
+                    onItemClicked = { pet ->
 
-                        }
-                    )
-                }
+                    }
+                )
             }
         }
     }

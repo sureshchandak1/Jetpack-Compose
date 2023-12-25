@@ -1,5 +1,9 @@
 package com.material.androidpro.model.petlist
 
+import androidx.compose.runtime.Immutable
+import java.util.UUID
+
+@Immutable
 data class Pet(
     val id: Int,
     val name: String,
@@ -9,5 +13,6 @@ data class Pet(
     val weight: Double,
     val image: Int,
     val about: String,
-    val owner: Owner
+    val owner: Owner,
+    val uniqueId: String = UUID.randomUUID().toString(),
 )
