@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
+import com.google.firebase.FirebaseApp
 import com.material.androidpro.preferences.SessionDataStore
 import com.material.androidpro.preferences.SharedPreferencesManager
 import com.material.androidpro.utils.JsonKeys
@@ -23,6 +24,7 @@ class AppController : MultiDexApplication() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+        FirebaseApp.initializeApp(applicationContext)
         SharedPreferencesManager.init(this)
         SessionDataStore.init(this)
         val isDarkMode = SharedPreferencesManager.getBoolean(JsonKeys.KEY_IS_DARK_MODE)

@@ -33,6 +33,10 @@ class ComposeUIItemViewModel(private val mActivity: Activity, model: DashboardMo
                 ComposeUIRetention.COMPOSE_NAVIGATION -> {
                     AppNavigator.navigateToComposeNavigationActivity(mActivity)
                 }
+                ComposeUIRetention.MUSIC_STREAMING -> {
+                    val action = DashboardFragmentDirections.actionDashboardFragmentToMusicStreamingFragment()
+                    navController.navigate(action)
+                }
             }
         }
     }
