@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id 'dagger.hilt.android.plugin'
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -161,6 +162,13 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
     implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
     implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
+
+    // Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-storage")
+    implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-firestore")
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
