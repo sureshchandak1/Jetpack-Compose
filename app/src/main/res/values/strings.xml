@@ -54,5 +54,12 @@
     <string name="rate_this_app">Rate this app</string>
     <string name="other">Other</string>
     <string name="about">About</string>
+    <string name="next_song">Next Song</string>
+    <string name="previous">Previous</string>
+    <string name="loadingMsg">Loading TrackList..</string>
+    <string name="artist">\Artist: </string>
+    <string name="trackNo">Track No. </string>
+    <string name="dismiss">Dismiss</string>
+    <string name="play_indicator">Album Play indicator</string>
 
 </resources>
