@@ -5,10 +5,11 @@ plugins {
 
 android {
     namespace 'com.material.composeui'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
-        minSdk 24
+        minSdk 26
+        targetSdk 34
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -31,13 +32,13 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.5"
+        kotlinCompilerExtensionVersion = "1.5.14"
     }
 }
 
 dependencies {
 
-    def composeBom = platform('androidx.compose:compose-bom:2023.06.01')
+    def composeBom = platform('androidx.compose:compose-bom:2024.08.00')
     implementation composeBom
     androidTestImplementation composeBom
 

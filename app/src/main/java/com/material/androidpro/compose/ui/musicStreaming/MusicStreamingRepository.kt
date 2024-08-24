@@ -1,6 +1,7 @@
 package com.material.androidpro.compose.ui.musicStreaming
 
 import android.text.TextUtils
+import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.StorageReference
@@ -24,30 +25,30 @@ class MusicStreamingRepository {
             Firebase.firestore.collection(Constants.TRACKS).get().addOnCompleteListener { task ->
                 var index = 0
 
-                task.result.forEach { document ->
-                    val imageUrlPath: String? = document.getString(Constants.ALBUM_ART)
-                    val trackUrlPath: String? = document.getString(Constants.FILENAME)
+                val trackResult: QuerySnapshot = task.result
 
-                    if (imageUrlPath != null && trackUrlPath != null) {
-                        if (!TextUtils.isEmpty(imageUrlPath) && !TextUtils.isEmpty(trackUrlPath)) {
+                trackResult.forEach { document ->
+                    val imageUrlPath: String = document.getString(Constants.ALBUM_ART) ?: ""
+                    val trackUrlPath: String = document.getString(Constants.FILENAME) ?: ""
 
-                            val imageUrl = albumArt.child(imageUrlPath)
-                            val trackUrl = trackRef.child(trackUrlPath)
+                    if (!TextUtils.isEmpty(imageUrlPath) && !TextUtils.isEmpty(trackUrlPath)) {
 
-                            imageUrl.downloadUrl.addOnSuccessListener {  imageDownloadUrl ->
-                                trackUrl.downloadUrl.addOnSuccessListener { trackDownloadUrl ->
-                                    trackList.add(
-                                        document.toTrack(
-                                            index = index,
-                                            imgUrl = imageDownloadUrl.toString(),
-                                            trackUrl = trackDownloadUrl.toString()
-                                        )
+                        val imageUrl = albumArt.child(imageUrlPath)
+                        val trackUrl = trackRef.child(trackUrlPath)
+
+                        imageUrl.downloadUrl.addOnSuccessListener {  imageDownloadUrl ->
+                            trackUrl.downloadUrl.addOnSuccessListener { trackDownloadUrl ->
+                                trackList.add(
+                                    document.toTrack(
+                                        index = index,
+                                        imgUrl = imageDownloadUrl.toString(),
+                                        trackUrl = trackDownloadUrl.toString()
                                     )
-                                    if (index == task.result.size() - 1) {
-                                        result.resume(trackList)
-                                    }
-                                    index++
+                                )
+                                if (index == trackResult.size() - 1) {
+                                    result.resume(trackList)
                                 }
+                                index++
                             }
                         }
                     }

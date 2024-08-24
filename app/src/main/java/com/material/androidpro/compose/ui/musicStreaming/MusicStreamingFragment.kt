@@ -161,7 +161,12 @@ class MusicStreamingFragment : Fragment(), OnMusicButtonClick {
                 } else {
                     currentSongIndex.value++ // increment song index
                 }
-                currentSong.value = trackList[nextSongIndex]
+                if (nextSongIndex < trackList.size) {
+                    currentSong.value = trackList[nextSongIndex]
+                } else {
+                    currentSong.value = trackList[0]
+                    currentSongIndex.value = 0
+                }
 
                 if (isPlaying.value) {
                     play()
@@ -181,8 +186,11 @@ class MusicStreamingFragment : Fragment(), OnMusicButtonClick {
                 } else {
                     currentSongIndex.value-- // decrement current song
                 }
-                currentSong.value = trackList[previousSongIndex]
-
+                if (previousSongIndex >= 0) {
+                    currentSong.value = trackList[previousSongIndex]
+                } else {
+                    currentSong.value = trackList[0]
+                }
                 if (isPlaying.value) {
                     play()
                 }
