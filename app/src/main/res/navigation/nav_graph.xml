@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_composeMVVMFragment"
             app:destination="@id/composeMVVMFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_musicStreamingFragment"
+            app:destination="@id/musicStreamingFragment" />
     </fragment>
     <fragment
         android:id="@+id/materialDesignFragment"
@@ -652,6 +655,15 @@
         android:id="@+id/bottomNavWithNavigationFragment"
         android:name="com.material.androidpro.material.bottomnav.compose.withNavigation.BottomNavWithNavigationFragment"
         android:label="with Compose Navigation">
+        <argument
+            android:name="title"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/musicStreamingFragment"
+        android:name="com.material.androidpro.compose.ui.musicStreaming.MusicStreamingFragment"
+        android:label="Music Streaming">
         <argument
             android:name="title"
             android:defaultValue=""

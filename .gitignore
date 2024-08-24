@@ -143,7 +143,6 @@ build/
 *.orig
 gradlew
 gradlew.bat
-gradle/*
 keystore/*
 
 *.apk

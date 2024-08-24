@@ -162,6 +162,13 @@ class DashboardData private constructor() {
             model.composeUIType = ComposeUIRetention.COMPOSE_NAVIGATION
             list.add(ComposeUIItemViewModel(activity, model))
 
+            model = DashboardModel()
+            model.image = R.drawable.water_bottle
+            model.title = "Music Streaming"
+            model.shortDes = ""
+            model.composeUIType = ComposeUIRetention.MUSIC_STREAMING
+            list.add(ComposeUIItemViewModel(activity, model))
+
             list.add(HeadingItemViewModel("GitHub"))
 
             list.add(

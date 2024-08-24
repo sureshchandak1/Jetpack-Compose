@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.material.androidpro.R
 import com.material.androidpro.base.BaseFragment
 import com.material.androidpro.databinding.FragmentDashboardBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DashboardFragment : BaseFragment() {
 
     private lateinit var mBinding: FragmentDashboardBinding
