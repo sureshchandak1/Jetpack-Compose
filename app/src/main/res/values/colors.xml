@@ -53,4 +53,7 @@
     <color name="red">#EB5757</color>
     <color name="blue">#006AF6</color>
 
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
 </resources>

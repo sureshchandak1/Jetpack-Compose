@@ -15,6 +15,9 @@ import com.material.androidpro.MaterialRetention;
 import com.material.androidpro.R;
 import com.material.androidpro.databinding.FragmentMaterialDesignBinding;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class MaterialDesignFragment extends Fragment {
 
     public MaterialDesignFragment() {
