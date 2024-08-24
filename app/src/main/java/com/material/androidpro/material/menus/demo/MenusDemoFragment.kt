@@ -90,7 +90,7 @@ class MenusDemoFragment : Fragment() {
     }
 
     private fun listPopupWindow(view: View) {
-        val listPopupWindow = ListPopupWindow(requireContext(), null, R.attr.listPopupWindowStyle)
+        val listPopupWindow = ListPopupWindow(requireContext(), null, androidx.appcompat.R.attr.listPopupWindowStyle)
         listPopupWindow.anchorView = view
 
         val items = listOf("Item 1", "Item 2", "Item 3", "Item 4")
