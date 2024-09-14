@@ -173,20 +173,26 @@ class DashboardData private constructor() {
 
             list.add(
                 GithubItemViewModel(
+                    "go-master",
+                    "https://github.com/sureshchandak1/learn-go"
+                )
+            )
+            list.add(
+                GithubItemViewModel(
                     "kotlin-master",
-                    "https://github.com/suresh000/kotlin-master"
+                    "https://github.com/sureshchandak1/kotlin-master"
                 )
             )
             list.add(
                 GithubItemViewModel(
                     "Jetpack-Compose",
-                    "https://github.com/suresh000/Jetpack-Compose"
+                    "https://github.com/sureshchandak1/Jetpack-Compose"
                 )
             )
             list.add(
                 GithubItemViewModel(
                     "Android-MVVM",
-                    "https://github.com/suresh000/Android-MVVM"
+                    "https://github.com/sureshchandak1/Android-MVVM"
                 )
             )
             list.add(EmptyItemViewModel())
